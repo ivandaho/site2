@@ -54,7 +54,11 @@ export default class CardComponent extends React.Component {
                 sm={6}
                 md={3}
             >
-                <Link to={this.props.url}><img className="icon" src={this.props.imgpath} /></Link>
+                {this.props.local ? (
+                    <Link to={this.props.url}><img className="icon" src={this.props.imgpath} /></Link>
+                ) : (
+                    <a href={this.props.url}><img className="icon" src={this.props.imgpath} /></a>
+                )}
                 <div className="text-center">{this.props.title}</div>
             </Col>
         )

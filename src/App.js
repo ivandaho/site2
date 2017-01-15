@@ -5,6 +5,7 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 import IndexPageComponent from './components/IndexPageComponent.jsx';
 import VideoPageComponent from './components/VideoPageComponent.jsx';
+import NoComponent from './components/NoComponent.jsx';
 import DocumentTitle from 'react-document-title';
 
 const App = ({children}) => (
@@ -18,6 +19,7 @@ render(
         <Route path="/" component={App}>
             <IndexRoute component={IndexPageComponent} />
             <Route path="/videos" component={VideoPageComponent} />
+        <Route path="*" component={NoComponent} />
         </Route>
     </Router>,
     document.getElementById('app')

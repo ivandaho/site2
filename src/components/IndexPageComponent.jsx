@@ -11,22 +11,26 @@ export default class IndexPageComponent extends React.Component {
             {'title': 'Programming',
                 'imgpath': './img/prog_tn_sq.png',
                 'bgpath': './img/bg_caps.jpg',
-                'url': 'https://www.github.com/ivandaho'
+                'url': 'https://www.github.com/ivandaho',
+                'local': false
             },
             {'title': 'Photos',
                 'imgpath': './img/photos_tn_sq.png',
                 'bgpath': './img/bg_cat.jpg',
-                'url': 'https://www.flickr.com/photos/99908143@N07/'
+                'url': 'https://www.flickr.com/photos/99908143@N07/',
+                'local': false
             },
             {'title': 'Videos',
                 'imgpath': './img/videos_tn_sq.png',
                 'bgpath': './img/bg_video.jpg',
-                'url': '/videos'
+                'url': '/videos',
+                'local': true
             },
             {'title': 'Music',
                 'imgpath': './img/music_tn_sq.png',
                 'bgpath': './img/bg_musicgear.jpg',
-                'url': '#'
+                'url': '#',
+                'local': true
             }
         ];
     }
@@ -52,6 +56,7 @@ export default class IndexPageComponent extends React.Component {
                                         key={index}
                                         title={obj.title}
                                         url={obj.url}
+                                        local={obj.local}
                                     />
                                 );
                             })}

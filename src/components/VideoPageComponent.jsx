@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Button, Grid, Row, Col, PageHeader } from 'react-bootstrap';
+import { Button, Grid, Row, Col, PageHeader, Breadcrumb, Nav, NavItem } from 'react-bootstrap';
 import DocumentTitle from 'react-document-title';
 
 class VideoEntry extends Component {
@@ -77,21 +77,32 @@ export default class VideoPageComponent extends React.Component {
     render(){
         return (
             <DocumentTitle title="Ivan's site - videos">
-            <Grid>
-                <PageHeader>Videos</PageHeader><br />
-            {this.getData().map((obj,index) => {
-                return (
-                    <VideoEntry
-                        key={obj.title}
-                        title={obj.title}
-                        date={obj.date}
-                        desc={obj.desc}
-                        src={obj.src}
-                    />
-                );
-            })}
-        </Grid>
-        </DocumentTitle>
+                <div>
+                    <Breadcrumb>
+                        <Breadcrumb.Item href="/">
+                            Home
+                        </Breadcrumb.Item>
+                        <Breadcrumb.Item active>
+                            Videos
+                        </Breadcrumb.Item>
+                    </Breadcrumb>
+
+                    <Grid>
+                        <PageHeader>Videos</PageHeader><br />
+                        {this.getData().map((obj,index) => {
+                            return (
+                                <VideoEntry
+                                    key={obj.title}
+                                    title={obj.title}
+                                    date={obj.date}
+                                    desc={obj.desc}
+                                    src={obj.src}
+                                />
+                            );
+                        })}
+                    </Grid>
+                </div>
+            </DocumentTitle>
         );
     }
 }
