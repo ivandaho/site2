@@ -1,0 +1,92 @@
+.react-main-wrapper {
+    background: #d7ded8;
+    position:absolute;
+    height: 100%;
+    width: 100%;
+}
+.card {
+    font-size: 15px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.icon {
+    /* height:160px; */
+    margin-left:auto;
+    margin-right:auto;
+    width:100%;
+}
+.capped-width {
+    /* max-width:50%; */
+}
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+.nogutter {
+    margin-top: 20%;
+    width: 100%;
+}
+/* xs < 768 */
+@media screen and (max-width: 767px) {
+    body {
+        font-size: 3em;
+    }
+}
+
+/* sm */
+@media screen and (min-width: 768px) {
+    body {
+        font-size: 3em;
+    }
+}
+
+/* md */
+@media screen and (min-width: 992px) {
+    body {
+        font-size: 1.2em;
+    }
+}
+
+/* lg */
+@media screen and (min-width: 1200px) {
+    body {
+        font-size: 1.3em;
+    }
+}
+#bg-id {
+    /* TODO: add other webkits */
+    -webkit-transition: background-image 0.2s, opacity 0.2s ease-in-out;
+    -moz-transition: background-image 0.2s, opacity 0.2s ease-in-out;
+    -o-transition: background-image 0.2s, opacity 0.2s ease-in-out;
+    transition: background-image 0.2s, opacity 0.2s ease-in-out;
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: 50% 90%;
+}
+
+#vid-container {
+    -webkit-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+#bg-video {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    size: cover;
+}

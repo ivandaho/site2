@@ -1,0 +1,10 @@
+.card {
+    font-size: 15px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
