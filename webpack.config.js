@@ -7,6 +7,9 @@ module.exports = {
         path: __dirname,
         filename: 'app.js'
     },
+    devServer: {
+        historyApiFallback: true
+    },
     module: {
         loaders: [{
             test: /\.jsx?$/,

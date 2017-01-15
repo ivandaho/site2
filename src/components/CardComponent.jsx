@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Button, Col } from 'react-bootstrap';
+import { Link } from 'react-router';
 
 export default class CardComponent extends React.Component {
     componentDidMount() {
@@ -40,7 +41,6 @@ export default class CardComponent extends React.Component {
         const vid = setTimeout(function() {
             document.getElementById('bg-video').pause();
         }, 200);
-        console.log(vid);
         this.setState({'vid': vid});
         document.getElementById('vid-container').style.opacity = 0;
         document.getElementById('bg-id').style.opacity = 0;
@@ -54,7 +54,7 @@ export default class CardComponent extends React.Component {
                 sm={6}
                 md={3}
             >
-                <img className="icon" src={this.props.imgpath} />
+                <Link to={this.props.url}><img className="icon" src={this.props.imgpath} /></Link>
                 <div className="text-center">{this.props.title}</div>
             </Col>
         )

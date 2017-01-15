@@ -1,5 +1,8 @@
-.react-main-wrapper {
+body {
     background: #d7ded8;
+}
+.react-main-wrapper {
+    /* background: #d7ded8; */
     position:absolute;
     height: 100%;
     width: 100%;
@@ -55,7 +58,7 @@
 /* lg */
 @media screen and (min-width: 1200px) {
     body {
-        font-size: 1.3em;
+        font-size: 1.2em;
     }
 }
 #bg-id {
@@ -89,4 +92,7 @@
     left: 0px;
     top: 0px;
     size: cover;
+}
+.some-margin {
+    margin-bottom: 20px;
 }

@@ -1,49 +1,24 @@
 import React from 'react';
+
 import { render } from 'react-dom';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
-import { Grid, Col } from 'react-bootstrap';
+import IndexPageComponent from './components/IndexPageComponent.jsx';
+import VideoPageComponent from './components/VideoPageComponent.jsx';
+import DocumentTitle from 'react-document-title';
 
-import CardComponent from './components/CardComponent.jsx';
+const App = ({children}) => (
+    <DocumentTitle title="Ivan's site">
+        {children}
+    </DocumentTitle>
+)
 
-class App extends React.Component {
-    getData() {
-        return [
-            {'title': 'Programming', 'imgpath': './img/prog_tn_sq.png', 'bgpath': './img/bg_caps.jpg'},
-            {'title': 'Photos', 'imgpath': './img/photos_tn_sq.png', 'bgpath': './img/bg_cat.jpg'},
-            {'title': 'Videos', 'imgpath': './img/videos_tn_sq.png', 'bgpath': './img/bg_video.jpg'},
-            {'title': 'Music', 'imgpath': './img/music_tn_sq.png', 'bgpath': './img/bg_musicgear.jpg'}
-        ];
-    }
-    render() {
-        return (
-            <div className="react-main-wrapper">
-                <div id="bg-id">
-                </div>
-                <div id="vid-container">
-                    <video id="bg-video" preload loop>
-                        <source src="./img/NextQuickDeer.webm" type="video/webm"/>
-                        No video support
-                    </video>
-                </div>
-                <Grid className="nogutter">
-                    <Col className="col-centered" xs={12} sm={12} md={8} lg={5}>
-                        <Grid fluid={true}>
-                            {this.getData().map((obj,index) => {
-                                return (
-                                    <CardComponent
-                                        imgpath={obj.imgpath}
-                                        bgpath={obj.bgpath}
-                                        key={index}
-                                        title={obj.title}
-                                    />
-                                );
-                            })}
-                        </Grid>
-                    </Col>
-                </Grid>
-            </div>
-        )
-    }
-}
-
-render(<App />,document.getElementById('app'));
+render(
+    <Router history={browserHistory}>
+        <Route path="/" component={App}>
+            <IndexRoute component={IndexPageComponent} />
+            <Route path="/videos" component={VideoPageComponent} />
+        </Route>
+    </Router>,
+    document.getElementById('app')
+);
