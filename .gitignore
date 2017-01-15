@@ -3,3 +3,7 @@ node_modules
 bootstrap/*
 !bootstrap/dist/css/
 !bootstrap/less/
+_site
+.sass-cache
+.jekyll-metadata
+_ignore

@@ -45611,23 +45611,41 @@
 	                _reactDocumentTitle2.default,
 	                { title: 'Ivan\'s site - videos' },
 	                _react2.default.createElement(
-	                    _reactBootstrap.Grid,
+	                    'div',
 	                    null,
 	                    _react2.default.createElement(
-	                        _reactBootstrap.PageHeader,
+	                        _reactBootstrap.Breadcrumb,
 	                        null,
-	                        'Videos'
+	                        _react2.default.createElement(
+	                            _reactBootstrap.Breadcrumb.Item,
+	                            { href: '/' },
+	                            'Home'
+	                        ),
+	                        _react2.default.createElement(
+	                            _reactBootstrap.Breadcrumb.Item,
+	                            { active: true },
+	                            'Videos'
+	                        )
 	                    ),
-	                    _react2.default.createElement('br', null),
-	                    this.getData().map(function (obj, index) {
-	                        return _react2.default.createElement(VideoEntry, {
-	                            key: obj.title,
-	                            title: obj.title,
-	                            date: obj.date,
-	                            desc: obj.desc,
-	                            src: obj.src
-	                        });
-	                    })
+	                    _react2.default.createElement(
+	                        _reactBootstrap.Grid,
+	                        null,
+	                        _react2.default.createElement(
+	                            _reactBootstrap.PageHeader,
+	                            null,
+	                            'Videos'
+	                        ),
+	                        _react2.default.createElement('br', null),
+	                        this.getData().map(function (obj, index) {
+	                            return _react2.default.createElement(VideoEntry, {
+	                                key: obj.title,
+	                                title: obj.title,
+	                                date: obj.date,
+	                                desc: obj.desc,
+	                                src: obj.src
+	                            });
+	                        })
+	                    )
 	                )
 	            );
 	        }
