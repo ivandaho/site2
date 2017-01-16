@@ -16,8 +16,10 @@ Run `node_modules/.bin/webpack` in sourcefiles directory to compile to sourcefil
 
 Once sourcefiles/app.js exists, it will be possible to just do a simple node `http-server`
 
-**Jekyll** can be run in the root directory. The github pages is serving static Jekyll generated files,  however I'm not really utilizing Jekyll features at at the moment.
+**Jekyll** can be run in the root directory. The GiHhub Pages is serving static Jekyll generated files,  however I'm not really utilizing Jekyll features at at the moment.
+
+Static files are in [this](https://github.com/ivandaho/ivandaho.github.io) GitHub Pages repo.
 
 **Bootstrap** less can be tweaked, first do `npm install` in sourcefiles/bootstrap and then `grunt dist` will build the css
 
-This repo uses bootstrap-react, which is standalone, however bootstrap css is still required. 
+This repo uses bootstrap-react, which is a standalone library (no external JavaScript dependencies), however bootstrap css is still required. 
