@@ -15,7 +15,7 @@ export default class IndexPageComponent extends React.Component {
                 'local': false
             },
             {'title': 'Photos',
-                'imgpath': './img/photos_tn_sq.png',
+                'imgpath': './img/photos_tn_sq_2.jpg',
                 'bgpath': './img/bg_cat.jpg',
                 'url': 'https://www.flickr.com/photos/99908143@N07/',
                 'local': false
