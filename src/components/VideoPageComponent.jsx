@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 
 import { Button, Grid, Row, Col, PageHeader, Breadcrumb, Nav, NavItem } from 'react-bootstrap';
 import DocumentTitle from 'react-document-title';
@@ -79,8 +80,8 @@ export default class VideoPageComponent extends React.Component {
             <DocumentTitle title="Ivan's site - videos">
                 <div>
                     <Breadcrumb>
-                        <Breadcrumb.Item href="/">
-                            Home
+                        <Breadcrumb.Item>
+                            <Link to="/">Home</Link>
                         </Breadcrumb.Item>
                         <Breadcrumb.Item active>
                             Videos
