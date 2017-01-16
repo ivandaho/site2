@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 
 export default class CardComponent extends React.Component {
     componentDidMount() {
-        this.state = {};
+        this.state = {'vid': 6};
         document.getElementById('bg-id').style.backgroundImage = 'none';
         document.getElementById('bg-id').style.opacity = 0;
     }
@@ -27,15 +27,14 @@ export default class CardComponent extends React.Component {
                 clearTimeout(this.state.vid + 1);
                 clearTimeout(this.state.vid + 2);
                 clearTimeout(this.state.vid + 3);
-            } else {
-                clearTimeout(9);
             }
             document.getElementById('vid-container').style.opacity = 1;
             document.getElementById('bg-video').play();
             return;
+        } else {
+            document.getElementById('bg-id').style.backgroundImage = "url(\'" + this.props.bgpath + "\')";
+            document.getElementById('bg-id').style.opacity = 1;
         }
-        document.getElementById('bg-id').style.opacity = 1;
-        document.getElementById('bg-id').style.backgroundImage = "url(\'" + this.props.bgpath + "\')";
     }
     bgClear() {
         const vid = setTimeout(function() {
@@ -44,7 +43,8 @@ export default class CardComponent extends React.Component {
         this.setState({'vid': vid});
         document.getElementById('vid-container').style.opacity = 0;
         document.getElementById('bg-id').style.opacity = 0;
-        document.getElementById('bg-id').style.backgroundImage = 'none';
+        {/* TODO: transition not working?? */}
+        {/* document.getElementById('bg-id').style.backgroundImage = 'none'; */}
     }
     render(){
         return (
