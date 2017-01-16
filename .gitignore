@@ -1,9 +1,13 @@
 *.swp
 node_modules
-bootstrap/*
-!bootstrap/dist/css/
-!bootstrap/less/
+sourcefiles/bootstrap/*
+!sourcefiles/bootstrap/dist/css/
+!sourcefiles/bootstrap/less/
 _site
 .sass-cache
 .jekyll-metadata
-_ignore
+sourcefiles/.sass-cache
+.jekyll-metadata
+sourcefiles/_ignore
+_public
+_public (copy)

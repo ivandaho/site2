@@ -45404,7 +45404,7 @@
 	    _createClass(CardComponent, [{
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
-	            this.state = {};
+	            this.state = { 'vid': 6 };
 	            document.getElementById('bg-id').style.backgroundImage = 'none';
 	            document.getElementById('bg-id').style.opacity = 0;
 	        }
@@ -45429,15 +45429,14 @@
 	                    clearTimeout(this.state.vid + 1);
 	                    clearTimeout(this.state.vid + 2);
 	                    clearTimeout(this.state.vid + 3);
-	                } else {
-	                    clearTimeout(9);
 	                }
 	                document.getElementById('vid-container').style.opacity = 1;
 	                document.getElementById('bg-video').play();
 	                return;
+	            } else {
+	                document.getElementById('bg-id').style.backgroundImage = "url(\'" + this.props.bgpath + "\')";
+	                document.getElementById('bg-id').style.opacity = 1;
 	            }
-	            document.getElementById('bg-id').style.opacity = 1;
-	            document.getElementById('bg-id').style.backgroundImage = "url(\'" + this.props.bgpath + "\')";
 	        }
 	    }, {
 	        key: 'bgClear',
@@ -45448,7 +45447,8 @@
 	            this.setState({ 'vid': vid });
 	            document.getElementById('vid-container').style.opacity = 0;
 	            document.getElementById('bg-id').style.opacity = 0;
-	            document.getElementById('bg-id').style.backgroundImage = 'none';
+	            {/* TODO: transition not working?? */}
+	            {/* document.getElementById('bg-id').style.backgroundImage = 'none'; */}
 	        }
 	    }, {
 	        key: 'render',
@@ -45499,6 +45499,8 @@
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(178);
 
 	var _reactBootstrap = __webpack_require__(234);
 
@@ -45618,8 +45620,12 @@
 	                        null,
 	                        _react2.default.createElement(
 	                            _reactBootstrap.Breadcrumb.Item,
-	                            { href: '/' },
-	                            'Home'
+	                            null,
+	                            _react2.default.createElement(
+	                                _reactRouter.Link,
+	                                { to: '/' },
+	                                'Home'
+	                            )
 	                        ),
 	                        _react2.default.createElement(
 	                            _reactBootstrap.Breadcrumb.Item,

@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 
 export default class CardComponent extends React.Component {
     componentDidMount() {
-        this.state = {'vid': 6};
+        this.state = {'vid': setTimeout(function() {})};
         document.getElementById('bg-id').style.backgroundImage = 'none';
         document.getElementById('bg-id').style.opacity = 0;
     }
