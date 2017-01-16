@@ -4,6 +4,7 @@ import { render } from 'react-dom';
 import { Grid, Col } from 'react-bootstrap';
 
 import CardComponent from './CardComponent.jsx';
+import FooterComponent from './FooterComponent.jsx';
 
 export default class IndexPageComponent extends React.Component {
     getData() {
@@ -37,6 +38,9 @@ export default class IndexPageComponent extends React.Component {
     render(){
         return (
             <div className="react-main-wrapper">
+                <div style={{position:'fixed',bottom:'0px',width:'100%'}}>
+                    <FooterComponent />
+                </div>
                 <div id="bg-id">
                 </div>
                 <div id="vid-container">

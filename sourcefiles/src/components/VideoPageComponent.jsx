@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 
 import { Button, Grid, Row, Col, PageHeader, Breadcrumb, Nav, NavItem } from 'react-bootstrap';
 import DocumentTitle from 'react-document-title';
+import FooterComponent from './FooterComponent.jsx';
 
 class VideoEntry extends Component {
     render() {
@@ -79,29 +80,32 @@ export default class VideoPageComponent extends React.Component {
         return (
             <DocumentTitle title="Ivan's site - videos">
                 <div>
-                    <Breadcrumb>
-                        <Breadcrumb.Item>
-                            <Link to="/">Home</Link>
-                        </Breadcrumb.Item>
-                        <Breadcrumb.Item active>
-                            Videos
-                        </Breadcrumb.Item>
-                    </Breadcrumb>
+                    <div>
+                        <Breadcrumb>
+                            <Breadcrumb.Item>
+                                <Link to="/">Home</Link>
+                            </Breadcrumb.Item>
+                            <Breadcrumb.Item active>
+                                Videos
+                            </Breadcrumb.Item>
+                        </Breadcrumb>
 
-                    <Grid>
-                        <PageHeader>Videos</PageHeader><br />
-                        {this.getData().map((obj,index) => {
-                            return (
-                                <VideoEntry
-                                    key={obj.title}
-                                    title={obj.title}
-                                    date={obj.date}
-                                    desc={obj.desc}
-                                    src={obj.src}
-                                />
-                            );
-                        })}
-                    </Grid>
+                        <Grid>
+                            <PageHeader>Videos</PageHeader><br />
+                            {this.getData().map((obj,index) => {
+                                return (
+                                    <VideoEntry
+                                        key={obj.title}
+                                        title={obj.title}
+                                        date={obj.date}
+                                        desc={obj.desc}
+                                        src={obj.src}
+                                    />
+                                );
+                            })}
+                        </Grid>
+                    </div>
+                    <FooterComponent />
                 </div>
             </DocumentTitle>
         );
